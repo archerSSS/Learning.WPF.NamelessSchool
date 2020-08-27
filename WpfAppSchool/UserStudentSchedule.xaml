@@ -1,0 +1,39 @@
+﻿<UserControl x:Name="UserControlStudentSchedule"
+             x:Class="WpfAppSchool.UserStudentSchedule"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfAppSchool"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid x:Name="GridSchedule" Grid.Row="1" DataContext="{Binding ElementName=UserControlStudentSchedule}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="7*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="5*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="5*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Border Grid.Row="1" Grid.Column="0" Grid.RowSpan="5" Grid.ColumnSpan="3" BorderBrush="PaleGoldenrod" BorderThickness="4"></Border>
+        <Calendar x:Name="CalendarSchedule" Grid.ColumnSpan="3" HorizontalAlignment="Left" SelectedDatesChanged="Calendar_SelectedDatesChanged"></Calendar>
+        <TextBlock Text="Понедельник" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center"></TextBlock>
+        <TextBlock Text="Вторник" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center"></TextBlock>
+        <TextBlock Text="Среда" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center"></TextBlock>
+        <TextBlock Text="Четверг" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Center"></TextBlock>
+        <TextBlock Text="Пятница" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center"></TextBlock>
+        <TextBlock Text="Суббота" Grid.Row="4" Grid.Column="2" HorizontalAlignment="Center"></TextBlock>
+        <ListBox x:Name="ScheduleMonday" Grid.Row="2" Grid.Column="0" Margin="5,0,0,0" ItemsSource="{Binding Path=ScheduleListMonday}"></ListBox>
+        <ListBox x:Name="ScheduleTuesday" Grid.Row="2" Grid.Column="1" ItemsSource="{Binding Path=ScheduleListTuesday}"></ListBox>
+        <ListBox x:Name="ScheduleWednesday" Grid.Row="2" Grid.Column="2" Margin="0,0,5,0" ItemsSource="{Binding Path=ScheduleListWednesday}"></ListBox>
+        <ListBox x:Name="ScheduleThursday" Grid.Row="5" Grid.Column="0" Margin="5,0,0,0" ItemsSource="{Binding Path=ScheduleListThursday}"></ListBox>
+        <ListBox x:Name="ScheduleFriday" Grid.Row="5" Grid.Column="1" ItemsSource="{Binding Path=ScheduleListFriday}"></ListBox>
+        <ListBox x:Name="ScheduleSaturday" Grid.Row="5" Grid.Column="2" Margin="0,0,5,0" ItemsSource="{Binding Path=ScheduleListSaturday}"></ListBox>
+    </Grid>
+</UserControl>

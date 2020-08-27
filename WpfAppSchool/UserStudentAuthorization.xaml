@@ -1,0 +1,29 @@
+﻿<UserControl x:Name="StudentAuthorization"
+             x:Class="WpfAppSchool.UserStudentAuthorization"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfAppSchool"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Border Margin="100, 120, 100, 120" BorderBrush="DarkOrange" BorderThickness="6">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="4*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Text="User name"></TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Password"></TextBlock>
+            <TextBlock Grid.Row="2" Grid.Column="0"></TextBlock>
+            <TextBox x:Name="TextAuthorizationLogin" Grid.Column="1" Grid.Row="0"></TextBox>
+            <TextBox x:Name="TextAuthorizationPassword" Grid.Column="1" Grid.Row="1"></TextBox>
+            <Button Grid.Column="1" Grid.Row="2" Content="Принять" Click="AuthorizeClick"></Button>
+        </Grid>
+    </Border>
+</UserControl>

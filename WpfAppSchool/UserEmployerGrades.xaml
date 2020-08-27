@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="WpfAppSchool.UserEmployerGrades"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfAppSchool"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="6*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Border BorderBrush="PaleGoldenrod" BorderThickness="4">
+            <TextBlock HorizontalAlignment="Center" Text="Список учеников" FontSize="20" FontWeight="Bold"></TextBlock>
+        </Border>
+        <Border Grid.Row="1" BorderBrush="PaleGoldenrod" BorderThickness="4">
+            <ListBox x:Name="ListStudents" Grid.Row="1" SelectionMode="Single"></ListBox>
+        </Border>
+        <Border Grid.Column="1" Grid.RowSpan="2" BorderBrush="PaleGoldenrod" BorderThickness="4">
+            <StackPanel>
+                <Button Content="Добавить оценку" Click="AddGradeClick"></Button>
+                <Button Content="Удалить оценку" Click="DeleteGradeClick" IsEnabled="False"></Button>
+                <Button Content="Добавить ученика" Click="AddStudentClick" IsEnabled="False"></Button>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

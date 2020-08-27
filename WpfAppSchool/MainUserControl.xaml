@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="WpfAppSchool.MainUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfAppSchool"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="5*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Grid.ColumnSpan="2" BorderThickness="5" BorderBrush="#c99979" Background="#b7bad7">
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="Nameless School" FontSize="20"></TextBlock>
+        </Border>
+        <Border Grid.Row="1" Grid.Column="0" Grid.RowSpan="2" BorderThickness="5" BorderBrush="#c99979" Background="#b7bad7">
+            <TreeView Background="#b7bad7">
+                <TreeViewItem Header="For students">
+                    <TreeViewItem Header="Authorization" MouseLeftButtonUp="TreeStudentAuthorizationClick">
+                    </TreeViewItem>
+                    <TreeViewItem Header="Main Menu" MouseLeftButtonUp="TreeStudentMenuClick">
+                    </TreeViewItem>
+                    <TreeViewItem Header="Description" MouseLeftButtonUp="TreeStudentDescriptionClick">
+                    </TreeViewItem>
+                </TreeViewItem>
+                <TreeViewItem Header="For employers">
+                    <TreeViewItem Header="Authorization" MouseLeftButtonUp="TreeEmployerAuthorizationClick">
+                    </TreeViewItem>
+                    <TreeViewItem Header="Main Menu" MouseLeftButtonUp="TreeEmployerMenuClick">
+                    </TreeViewItem>
+                    <TreeViewItem Header="Description">
+                    </TreeViewItem>
+                </TreeViewItem>
+            </TreeView>
+        </Border>
+        <Border x:Name="ContentCell" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" BorderThickness="5" BorderBrush="#c99979" Background="#b7bad7">
+        </Border>
+    </Grid>
+</UserControl>
